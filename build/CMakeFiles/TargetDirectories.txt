@@ -1,0 +1,3 @@
+C:/Users/perso/Programming/ComputerGraphics/WeekendRaytracer/build/CMakeFiles/raytracer.dir
+C:/Users/perso/Programming/ComputerGraphics/WeekendRaytracer/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/perso/Programming/ComputerGraphics/WeekendRaytracer/build/CMakeFiles/ZERO_CHECK.dir

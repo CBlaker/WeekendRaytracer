@@ -1,0 +1,10 @@
+^C:\USERS\PERSO\PROGRAMMING\COMPUTERGRAPHICS\WEEKENDRAYTRACER\BUILD\CMAKEFILES\574A7F23945B84642CB0C69B95722E98\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/perso/Programming/ComputerGraphics/WeekendRaytracer -BC:/Users/perso/Programming/ComputerGraphics/WeekendRaytracer/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/perso/Programming/ComputerGraphics/WeekendRaytracer/build/WeekendRaytracer.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
