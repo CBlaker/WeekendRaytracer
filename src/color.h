@@ -18,7 +18,8 @@ void writeCol(std::ofstream& out, color& uvCol) {
             int rByte = int(255 * r);
             int gByte = int(255 * g);
             int bByte = int(255 * b);
-                        
+            
+            //Output as "Red Green Blue" for ppm file
             out << rByte << ' ' << gByte << ' ' << bByte << '\n';
 }
 
