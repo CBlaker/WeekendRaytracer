@@ -1,3 +1,3 @@
-C:/Users/perso/Programming/ComputerGraphics/WeekendRaytracer/build/CMakeFiles/raytracer.dir
-C:/Users/perso/Programming/ComputerGraphics/WeekendRaytracer/build/CMakeFiles/ALL_BUILD.dir
-C:/Users/perso/Programming/ComputerGraphics/WeekendRaytracer/build/CMakeFiles/ZERO_CHECK.dir
+/home/ccblaker/Documents/Programming/Computer Graphics/WeekendRaytracer/build/CMakeFiles/raytracer.dir
+/home/ccblaker/Documents/Programming/Computer Graphics/WeekendRaytracer/build/CMakeFiles/edit_cache.dir
+/home/ccblaker/Documents/Programming/Computer Graphics/WeekendRaytracer/build/CMakeFiles/rebuild_cache.dir

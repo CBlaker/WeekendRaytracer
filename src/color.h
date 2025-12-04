@@ -5,14 +5,15 @@
 
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 
 using color = vec3;
 
-void writeCol(std::ofstream& out, color& uvCol) {
+void writeCol(std::ofstream& out, color& col) {
 
-            auto r = uvCol.x();
-            auto g = uvCol.y();
-            auto b = uvCol.z();
+            auto r = std::clamp(col.x(), 0.0, 1.0);
+            auto g = std::clamp(col.y(), 0.0, 1.0);
+            auto b = std::clamp(col.z(), 0.0, 1.0);
 
             //0-1 UV Coord to 0-255 RGB Colorspace
             int rByte = int(255 * r);
