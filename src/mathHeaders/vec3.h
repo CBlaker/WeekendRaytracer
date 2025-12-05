@@ -23,7 +23,7 @@ class vec3 {
             return e[i]; 
         }
 
-        vec3 operator-() {
+        vec3 operator-() const {
             return vec3(-e[0], -e[1], -e[2]);
         }
 
