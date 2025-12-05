@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "xiosbase": "cpp",
-        "iosfwd": "cpp",
-        "algorithm": "cpp",
-        "fstream": "cpp"
-    },
-    "cmake.sourceDirectory": "/home/ccblaker/Documents/Programming/Computer Graphics/WeekendRaytracer"
-}

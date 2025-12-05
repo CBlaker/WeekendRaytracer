@@ -1,0 +1,21 @@
+# Build artifacts
+build/
+*.o
+*.obj
+*.exe
+*.out
+
+# CMake generated files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# VS Code local settings (OS/compiler-specific)
+.vscode/cmake-kits.json
+.vscode/launch.json
+.vscode/tasks.json
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
