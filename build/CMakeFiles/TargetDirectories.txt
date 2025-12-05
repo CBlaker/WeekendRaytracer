@@ -1,3 +1,0 @@
-/home/ccblaker/Documents/Programming/Computer Graphics/WeekendRaytracer/build/CMakeFiles/raytracer.dir
-/home/ccblaker/Documents/Programming/Computer Graphics/WeekendRaytracer/build/CMakeFiles/edit_cache.dir
-/home/ccblaker/Documents/Programming/Computer Graphics/WeekendRaytracer/build/CMakeFiles/rebuild_cache.dir

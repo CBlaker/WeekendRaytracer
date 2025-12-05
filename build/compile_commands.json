@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/home/ccblaker/Documents/Programming/Computer Graphics/WeekendRaytracer/build",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/raytracer.dir/src/main.cpp.o -c \"/home/ccblaker/Documents/Programming/Computer Graphics/WeekendRaytracer/src/main.cpp\"",
-  "file": "/home/ccblaker/Documents/Programming/Computer Graphics/WeekendRaytracer/src/main.cpp",
-  "output": "CMakeFiles/raytracer.dir/src/main.cpp.o"
-}
-]
