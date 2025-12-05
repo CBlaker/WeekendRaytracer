@@ -9,11 +9,10 @@ class ray {
 
         ray(const point3& origin, const vec3& direction) : org(origin), dir(direction) {}
 
-        
-        const point3& origin() { return org; }
-        const point3& direction() { return dir; }
+        const point3& origin() const { return org; }
+        const vec3& direction() const { return dir; }
 
-        point3 rayAt(double t) {
+        point3 rayAt(double t) const {
             return org + t*dir;
         }
 
