@@ -18,13 +18,13 @@ class surfaceList : public surface {
             objects.push_back(object);
         }
 
-        bool hit(const ray& r, double tMin, double tMax, hitInfo& info) const override {
+        bool hit(const ray& r, interval hitRange, hitInfo& info) const override {
             hitInfo tempInfo;
             bool hitAny = false;
-            double closest = tMax;
+            double closest = hitRange.max;
 
-            for (const shared_ptr<surface>(object) : objects) {
-                if (object->hit(r, tMin, closest, tempInfo)) {
+            for (const shared_ptr<surface>& object : objects) {
+                if (object->hit(r, interval(hitRange.min, closest), tempInfo)) {
                     hitAny = true;
                     closest = tempInfo.t;
                     info = tempInfo;

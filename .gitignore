@@ -19,3 +19,6 @@ Makefile
 # OS-specific junk
 .DS_Store
 Thumbs.db
+
+# Render Files
+*.ppm

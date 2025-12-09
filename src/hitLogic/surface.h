@@ -16,13 +16,11 @@ class hitInfo {
         }
 };
 
-
-
 class surface {
     public:
         virtual ~surface() {}
 
-        virtual bool hit(const ray& r, double tMin, double tMax, hitInfo& info) const = 0;
+        virtual bool hit(const ray& r, interval hitRange, hitInfo& info) const = 0;
 };
 
 #endif

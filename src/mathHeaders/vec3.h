@@ -11,9 +11,9 @@ class vec3 {
         vec3() : e{0, 0, 0} {}
         vec3(double x, double y, double z) : e{x, y, z} {}
 
-        double x() { return e[0]; }
-        double y() { return e[1]; }
-        double z() { return e[2]; }
+        double x() const { return e[0]; }
+        double y() const { return e[1]; }
+        double z() const { return e[2]; }
 
         double operator[](int i) const { 
             return e[i]; 
@@ -87,6 +87,10 @@ class vec3 {
 
     inline vec3 operator/(const vec3& v, double t) {
         return v * (1/t);
+    }
+
+    inline vec3 operator/(double t, const vec3& v) {
+        return vec3(t / v.e[0], t / v.e[1], t / v.e[2]);
     }
     
     inline double dot(const vec3& u, const vec3& v) {

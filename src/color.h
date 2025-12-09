@@ -2,25 +2,26 @@
 #define COLOR_H
 
 #include "rtweekend.h"
+#include "mathHeaders/vec3.h"
 
 #include <fstream>
-#include <algorithm>
 
 using color = vec3;
 
-void writeCol(std::ofstream& out, color& col) {
+void writeCol(std::ofstream& out, const color& col) {
+    static const interval colorRange(0.0, 1.0);
 
-            auto r = std::clamp(col.x(), 0.0, 1.0);
-            auto g = std::clamp(col.y(), 0.0, 1.0);
-            auto b = std::clamp(col.z(), 0.0, 1.0);
+    auto r = col.x();
+    auto g = col.y();
+    auto b = col.z();
 
-            //0-1 UV Coord to 0-255 RGB Colorspace
-            int rByte = int(255 * r);
-            int gByte = int(255 * g);
-            int bByte = int(255 * b);
-            
-            //Output as "Red Green Blue" for ppm file
-            out << rByte << ' ' << gByte << ' ' << bByte << '\n';
+    //0-1 UV Coord to 0-255 RGB Colorspace
+    int rByte = int(255 * colorRange.clamp(r));
+    int gByte = int(255 * colorRange.clamp(g));
+    int bByte = int(255 * colorRange.clamp(b));
+    
+    //Output as "Red Green Blue" for ppm file
+    out << rByte << ' ' << gByte << ' ' << bByte << '\n';
 }
 
 #endif

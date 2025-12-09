@@ -1,13 +1,13 @@
 #ifndef SURFACES_H
 #define SURFACES_H
 
-#include "surface.h"
+#include "hitList.h"
 
 class sphere : public surface {
     public:
         sphere(const point3& spherePos, double sphereRad) : center(spherePos), radius(std::fmax(0, sphereRad)) {}
 
-        bool hit(const ray& r, double tMin, double tMax, hitInfo& info) const override {
+        bool hit(const ray& r, interval hitRange, hitInfo& info) const override {
             vec3 CminQ = center - r.origin();
             float a = r.direction().lengthSquared();
             float h = dot(r.direction(), CminQ);
@@ -19,9 +19,9 @@ class sphere : public surface {
             float sqrtd = std::sqrt(discriminant);
 
             float root = (h - sqrtd) / a;
-            if (root <= tMin || tMax >= root) {
+            if (!hitRange.surrounds(root)) {
                 root = (h + sqrtd) / a;
-                if (root <= tMin || tMax >= root) { return false; }
+                if (!hitRange.surrounds(root)) { return false; }
             }
         
             info.t = root;

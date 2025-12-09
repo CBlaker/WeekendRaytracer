@@ -69,13 +69,12 @@ class vec2 {
         return vec2(u.e[0] * v.e[0], u.e[1] * v.e[1]);
     }
 
-
     inline vec2 operator*(const vec2& v, double t) {
         return vec2(t * v.e[0], t * v.e[1]);
     }
 
-        inline vec2 operator*(double t, const vec2& v) {
-            return v * t;
+    inline vec2 operator*(double t, const vec2& v) {
+        return v * t;
     }
 
     inline vec2 operator/(const vec2& u, const vec2& v) {
@@ -84,6 +83,10 @@ class vec2 {
 
     inline vec2 operator/(const vec2& v, double t) {
         return v * (1/t);
+    }
+
+    inline vec2 operator/(double t, const vec2& v) {
+        return vec2(t / v.e[0], t / v.e[1]);
     }
 
     inline double dot(const vec2& u, const vec2& v) {
