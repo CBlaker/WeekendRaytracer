@@ -1,9 +1,6 @@
 #ifndef RTWEEKEND_H
 #define RTWEEKEND_H
 
-//General Headers
-#include "mathHeaders/ray.h"
-#include "mathHeaders/vec2.h"
 #include "mathHeaders/interval.h"
 
 //General Includes
@@ -32,9 +29,9 @@ inline double randomDouble() {
     return distribution(generator);
 }
 
-inline double randomDouble(double min, double max) {
+inline double randomDouble(interval range) {
     //Random double in [min,max)
-    return min + (max - min) * randomDouble();
+    return range.min + (range.max - range.min) * randomDouble();
 }
 
 #endif

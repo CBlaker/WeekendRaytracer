@@ -1,7 +1,7 @@
 #ifndef SURFACES_H
 #define SURFACES_H
 
-#include "hitList.h"
+#include "surface.h"
 
 class sphere : public surface {
     public:

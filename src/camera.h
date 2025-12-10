@@ -1,11 +1,13 @@
 #ifndef CAMERA_H
 #define CAMERA_H
 
-#include "rtweekend.h"
+#include "utility.h"
 
 #include "color.h"
 #include "hitLogic/hitList.h"
 #include "hitLogic/objects.h"
+
+#include "mathHeaders/vec2.h"
 
 class camera {
     public:
@@ -21,6 +23,10 @@ class camera {
         //Ray Properties
         int sampleNum = 10;
         double sampleScatter = 1.0;
+
+        //Ray Bounce Properties
+        int maxBounces = 10;
+        double diffuse = 0.5;
 
         void render(const surface& world) {
             double aspect = double(res.x()) / double(res.y());
@@ -44,7 +50,7 @@ class camera {
 
                     for (int sample=0; sample < sampleNum; sample++) {
                         ray r = getCamRay(uv);
-                        pixCol += rayCol(r, world);
+                        pixCol += rayCol(r, maxBounces, world);
                     }
                     writeCol(file, pixCol * sampleScale);
                 }
@@ -68,10 +74,15 @@ class camera {
         }
 
         //Ray Color Function
-        color rayCol(const ray& r, const surface& world) const {
+        color rayCol(const ray& r, int bounces, const surface& world) const {
+            if (bounces <= 0) {
+                return color(0,0,0);
+            }
+
             hitInfo info;
-                if (world.hit(r, interval(epsilon, infinity), info)) {
-                    return 0.5 * (info.normal + color(1,1,1));
+                if (world.hit(r, interval(0.01, infinity), info)) {
+                    vec3 rayDir = randomDivergent(info.normal, diffuse);
+                    return 0.5 * rayCol(ray(info.hitPos, rayDir), bounces-1, world);
                 }
 
                 vec3 unitDir = normalize(r.direction());

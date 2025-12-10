@@ -1,7 +1,8 @@
 #ifndef HITSURFACE_H
 #define HITSURFACE_H
 
-#include "../rtweekend.h"
+#include "../utility.h"
+#include "../mathHeaders/ray.h"
 
 class hitInfo {
     public:

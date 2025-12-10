@@ -14,14 +14,17 @@ int main() {
     camera cam;
 
     cam.file = std::ofstream("../output.ppm", std::ios::binary);
-    //cam.res = vec2(1920, 1080);
+    cam.res = vec2(1920, 1080);
 
     cam.camPos = point3(0.0, 0.0, 0.0);
     cam.camScale = 1.0;
     cam.focalLength = 1.0;
 
     cam.sampleNum = 100;
-    cam.sampleScatter = 2.0;
+    cam.sampleScatter = 1.0;
+    
+    cam.maxBounces = 10;
+    cam.diffuse = 0.5;
 
     cam.render(world);
 }

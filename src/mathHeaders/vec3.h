@@ -1,6 +1,8 @@
 #ifndef VEC3_H
 #define VEC3_H
 
+#include "../utility.h"
+
 #include <cmath>
 #include <iostream>
 
@@ -51,6 +53,18 @@ class vec3 {
 
         double length() const {
             return std::sqrt(lengthSquared());
+        }
+
+        static vec3 random() {
+            return vec3(randomDouble(), randomDouble(), randomDouble());
+        }
+
+        static vec3 random(interval range) {
+            return vec3(randomDouble(range), randomDouble(range), randomDouble(range));
+        }
+
+        static vec3 random(interval rangeX, interval rangeY, interval rangeZ) {
+            return vec3(randomDouble(rangeX), randomDouble(rangeY), randomDouble(rangeZ));
         }
     };
 
@@ -107,6 +121,18 @@ class vec3 {
 
     inline vec3 normalize(const vec3& v) {
     return v / v.length();
-}
+    }
+
+    inline vec3 randomDivergent(const vec3& normal, float divergence) {
+        return normalize(vec3::random(
+            interval(normal.x() - divergence, normal.x() + divergence),
+            interval(normal.y() - divergence, normal.y() + divergence),
+            interval(normal.z() - divergence, normal.z() + divergence)
+        ));
+    }
+
+    inline vec3 reflect(const vec3& view, const vec3& normal) {
+        return view - 2*dot(view,normal)*normal;
+    }
 
 #endif
